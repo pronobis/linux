@@ -1764,9 +1764,9 @@ static int asus_wmi_add(struct platform_device *pdev)
 	if (err)
 		goto fail_leds;
 
-	err = asus_wmi_rfkill_init(asus);
-	if (err)
-		goto fail_rfkill;
+	/* err = asus_wmi_rfkill_init(asus); */
+	/* if (err) */
+	/* 	goto fail_rfkill; */
 
 	/* Some Asus desktop boards export an acpi-video backlight interface,
 	   stop this from showing up */
@@ -1808,8 +1808,8 @@ fail_wmi_handler:
 	asus_wmi_backlight_exit(asus);
 fail_backlight:
 	asus_wmi_rfkill_exit(asus);
-fail_rfkill:
-	asus_wmi_led_exit(asus);
+/* fail_rfkill: */
+/* 	asus_wmi_led_exit(asus); */
 fail_leds:
 fail_hwmon:
 	asus_wmi_input_exit(asus);
